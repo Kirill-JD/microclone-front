@@ -17,7 +17,7 @@
 
         <v-list density="compact" nav>
           <v-list-item prepend-icon="mdi-home" title="Home" value="home" to="/"></v-list-item>
-          <v-list-item prepend-icon="mdi-account-multiple" title="Issues" value="issue" to="/issues"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-multiple" title="Issues" value="issue" to="/projects/"></v-list-item>
           <v-list-item prepend-icon="mdi-star" title="Starred" value="starred" to="/1"></v-list-item>
         </v-list>
       </v-navigation-drawer>
