@@ -1,12 +1,22 @@
 <template>
 	<div>
-		{{ problems }}
+		<div class="pa-5">
+			<h1>Ошибки</h1>
+		</div>
+		<div class="px-5 py-2" v-for="problem in problems" :key="problem.id">
+			<ProblemItem
+				:problem="problem"/>
+		</div>
 	</div>
 </template>
 
 <script>
-import {getProblemByIdApi} from "@/services/Api"
+import ProblemItem from "@/components/ProblemItem"
+import {getProblemsByIdApi} from "@/services/Api"
 export default {
+	components: {
+		ProblemItem
+	},
 	data() {
 		return {
 			id: this.$route.params['id'],
@@ -14,7 +24,7 @@ export default {
 		}
 	},
 	mounted() {
-		getProblemByIdApi(this.id).then(json => {
+		getProblemsByIdApi(this.id).then(json => {
 			this.problems = json
 		})
 	}

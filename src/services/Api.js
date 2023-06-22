@@ -1,9 +1,14 @@
 export const getProjectIssuesApi = async () => {
-	return await fetch('/api/get_project_list/?format=json')
+	return await fetch('/api/projects/?format=json')
+	.then(response => response.json())
+}
+
+export const getProblemsByIdApi = async (id) => {
+	return await fetch(`/api/problems/${id}/?format=json`)
 	.then(response => response.json())
 }
 
 export const getProblemByIdApi = async (id) => {
-	return await fetch(`/api/get_problem_list/${id}/?format=json`)
+	return await fetch(`/api/problem/${id}/?format=json`)
 	.then(response => response.json())
 }

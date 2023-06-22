@@ -1,15 +1,16 @@
 <template>
-  <v-card>
+  <v-card style="box-shadow: none;">
     <v-layout>
       <v-navigation-drawer
         expand-on-hover
         rail
+				style="background-color: #c1ddda;"
       >
         <v-list>
           <v-list-item
 						prepend-icon="mdi-account"
             title="UserName"
-            subtitle="test@gmailcom"
+            subtitle="test@gmail.com"
           ></v-list-item><!-- prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg" -->
         </v-list>
 
@@ -17,14 +18,17 @@
 
         <v-list density="compact" nav>
           <v-list-item prepend-icon="mdi-home" title="Home" value="home" to="/"></v-list-item>
-          <v-list-item prepend-icon="mdi-account-multiple" title="Issues" value="issue" to="/projects/"></v-list-item>
+          <v-list-item prepend-icon="mdi-alert" title="Issues" value="issue" to="/projects/"></v-list-item>
           <v-list-item prepend-icon="mdi-star" title="Starred" value="starred" to="/1"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 
-      <v-main style="height: auto">
+      <v-main>
 				<router-view/>
 			</v-main>
     </v-layout>
   </v-card>
 </template>
+
+<style>
+</style>

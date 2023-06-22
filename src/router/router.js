@@ -3,6 +3,7 @@ import HomePage from "@/pages/HomePage"
 import ProjectListPage from "@/pages/ProjectListPage"
 import ProjectPage from "@/pages/ProjectPage"
 import TestPage from "@/pages/TestPage"
+import ProblemPage from "@/pages/ProblemPage"
 
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
 		path: '/projects/:id',
 		name: `Project`,
 		component: ProjectPage,
+	},
+	{
+		path: '/projects/:id/:problemId',
+		name: `Problem`,
+		component: ProblemPage,
 	},
 	{
 		path: '/1/',
