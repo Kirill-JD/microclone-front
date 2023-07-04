@@ -19,7 +19,18 @@
         <v-list density="compact" nav>
           <v-list-item prepend-icon="mdi-home" title="Home" value="home" to="/"></v-list-item>
           <v-list-item prepend-icon="mdi-alert" title="Issues" value="issue" to="/projects/"></v-list-item>
-          <v-list-item prepend-icon="mdi-star" title="Starred" value="starred" to="/1"></v-list-item>
+          <v-list-item prepend-icon="mdi-star" title="Starred" value="starred" to="/1/"></v-list-item>
+        </v-list>
+
+				<v-divider></v-divider>
+
+				<v-list>
+          <v-list-item
+						prepend-icon="mdi mdi-logout"
+            title="Выйти"
+						to="/login/"
+						@click="logout"
+          ></v-list-item>
         </v-list>
       </v-navigation-drawer>
 
@@ -29,6 +40,16 @@
     </v-layout>
   </v-card>
 </template>
+
+<script>
+export default {
+	methods: {
+		logout() {
+			this.$store.dispatch('setToken', null);
+		}
+	}
+}
+</script>
 
 <style>
 </style>

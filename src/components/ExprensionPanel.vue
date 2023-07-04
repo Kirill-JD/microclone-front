@@ -11,7 +11,7 @@
 						variant="outlined"
 						density="compact">
 						<v-row>
-							<v-col>
+							<v-col align-self="center">
 								{{ item.module }} <span style="color: gray;">in</span> {{ item.function }} <span style="color: gray;">at line</span> {{ item.lineno }}
 							</v-col>
 							<v-col md="auto">
