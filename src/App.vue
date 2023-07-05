@@ -1,5 +1,5 @@
 <template>
-	<div v-if="token === null">
+	<div v-if="auth">
 		<LoginPage/>
 	</div>
 	<div v-else>
@@ -10,7 +10,6 @@
 <script>
 import LoginPage from "@/pages/LoginPage"
 import Navigation from '@/components/Navigation';
-import { mapState } from 'vuex'
 export default {
   name: 'App',
   components: {
@@ -18,19 +17,18 @@ export default {
 		Navigation
   },
 	computed: {
-    ...mapState(['token'])
+    auth: function () {
+			if (typeof localStorage['token'] === "undefined") {
+				return true
+			}
+			return false
+		}
   },
 	data() {
 		return {
 		}
 	},
 	methods: {
-		auth() {
-			if (typeof localStorage["cart"] === "undefined") {
-				return true
-			}
-			return false
-		}
 	}
 }
 </script>

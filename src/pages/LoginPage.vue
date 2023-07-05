@@ -90,8 +90,9 @@ export default {
 			})
 			.then(response => response.json())
 			.then(json => {
-				this.$store.dispatch('setToken', json.jwtToken);
-				this.$router.push(`/`)
+				localStorage.setItem('token', json.jwtToken)
+				localStorage.setItem('startTime', new Date().getTime())
+				window.location.href = `/`
 			})
 			.catch(() => {
 				alert("Неверные данные для входа")
